@@ -16,4 +16,4 @@ WORKDIR /app
 COPY . /app
 RUN bundle install
 
-CMD ["rails", "server"]
+#CMD ["rails", "server"]
