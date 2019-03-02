@@ -12,8 +12,17 @@ EXPOSE 3000
 # Set the working directory to /app
 WORKDIR /app
 
+ENV BUNDLE_PATH /box
+ENV GEM_PATH /box
+ENV GEM_HOME /box
+
 # Copy the current directory contents into the container at /app
 COPY . /app
+
+RUN gem install bundler
+RUN gem install rails-controller-testing -v 1.0.4
+
+COPY Gemfile Gemfile
 RUN bundle install
 
 #CMD ["rails", "server"]
