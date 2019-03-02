@@ -12,17 +12,11 @@ EXPOSE 3000
 # Set the working directory to /app
 WORKDIR /app
 
-ENV BUNDLE_PATH /box
-ENV GEM_PATH /box
-ENV GEM_HOME /box
-
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-RUN gem install bundler
-RUN gem install rails-controller-testing -v 1.0.4
+# annoyingly this does not like adding new gems...using the docker_entrypoint.sh instead
+#RUN bundle install
 
-COPY Gemfile Gemfile
-RUN bundle install
-
+# using entrypoint in docker compose instead
 #CMD ["rails", "server"]
