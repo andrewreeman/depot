@@ -37,5 +37,17 @@ class CartsTest < ApplicationSystemTestCase
     end
 
     assert_text "Cart was successfully destroyed"
+  end  
+
+  test "destroying a Cart from cart show page" do
+
+    # something like this...
+
+    get store_url # create new cart        
+    assert_difference('Cart.count', -1) do
+      click_button 'Empty cart'        
+    end
+
+    assert_redirected_to store_path
   end
 end

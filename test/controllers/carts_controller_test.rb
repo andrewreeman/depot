@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CartsControllerTest < ActionDispatch::IntegrationTest
+#class CartsControllerTest < ActionController::TestCase
   setup do
     @cart = carts(:one)
   end
@@ -17,7 +18,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cart" do
     assert_difference('Cart.count') do
-      post carts_url, params: { cart: {  } }
+      post carts_url, params: { cart: {} }
     end
 
     assert_redirected_to cart_url(Cart.last)
@@ -38,11 +39,16 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to cart_url(@cart)
   end
 
-  test "should destroy cart" do
-    assert_difference('Cart.count', -1) do
-      delete cart_url(@cart)
-    end
+  # cannot destroy cart now without a 'session' this has been moved to system tests
+  # test "should destroy cart" do
+  #   get store_url # create new cart        
+  #   assert_difference('Cart.count', -1) do
+  #     #click_button 'Empty cart'
+  #   #  session[:cart_id] = @cart.id
+  #     @cart.id = 1
+  #     delete cart_url(@cart)
+  #   end
 
-    assert_redirected_to carts_url
-  end
+  #   assert_redirected_to store_path
+  # end
 end
