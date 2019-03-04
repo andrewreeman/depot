@@ -5,49 +5,14 @@ class CartsTest < ApplicationSystemTestCase
     @cart = carts(:one)
   end
 
-  test "visiting the index" do
-    visit carts_url
-    assert_selector "h1", text: "Carts"
-  end
+  test "destroying a Cart from cart show page" do    
+    visit store_path # create new cart        
+    all(".add-to-cart-button").first.click            
+    find("#empty-cart-btn").click
+    a = page.driver.browser.switch_to.alert
+    a.accept
+    assert_text "Your cart is currently empty."    
 
-  test "creating a Cart" do
-    visit carts_url
-    click_on "New Cart"
-
-    click_on "Create Cart"
-
-    assert_text "Cart was successfully created"
-    click_on "Back"
-  end
-
-  test "updating a Cart" do
-    visit carts_url
-    click_on "Edit", match: :first
-
-    click_on "Update Cart"
-
-    assert_text "Cart was successfully updated"
-    click_on "Back"
-  end
-
-  test "destroying a Cart" do
-    visit carts_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
-
-    assert_text "Cart was successfully destroyed"
-  end  
-
-  test "destroying a Cart from cart show page" do
-
-    # something like this...
-
-    get store_url # create new cart        
-    assert_difference('Cart.count', -1) do
-      click_button 'Empty cart'        
-    end
-
-    assert_redirected_to store_path
+    
   end
 end
