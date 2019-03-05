@@ -12,4 +12,9 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
 
   end  
 
+  test "markup needed for store.coffee is in place" do 
+    get store_index_url
+    assert_select ".store .entry > img"    
+    assert_select ".entry input[type=submit]", 3
+  end
 end
