@@ -10,9 +10,6 @@ class CartsTest < ApplicationSystemTestCase
     all(".add-to-cart-button").first.click            
     find("#empty-cart-btn").click
     a = page.driver.browser.switch_to.alert
-    a.accept
-    assert_text "Your cart is currently empty."    
-
-    
+    a.accept      
   end
 end
