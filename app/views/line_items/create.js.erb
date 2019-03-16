@@ -1,5 +1,7 @@
 notice = document.getElementById('notice')
-notice.hidden = true
+if(notice != null) {
+    notice.hidden = true
+}
 
 cart = document.getElementById('cart')
 cart.innerHTML  = "<%= escape_javascript render(@cart) %>"
