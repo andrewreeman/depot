@@ -22,8 +22,7 @@ class CombineItemsInCart < ActiveRecord::Migration[5.2]
     end
   end
 
-  def down
-    print("Down called")
+  def down    
     # replace items where quantity is above 1 with multiple items of a single quantity
     LineItem.where("quantity>1").each do |line_item|
       line_item.quantity.times do 

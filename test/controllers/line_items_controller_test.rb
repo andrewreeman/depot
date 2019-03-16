@@ -56,7 +56,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
         xhr: true      
     end    
 
-    #print(response.parsed_body)
     assert_response :success
     assert response.body.include?("Programming Ruby 1.9")    
   end
