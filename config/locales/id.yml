@@ -1,0 +1,68 @@
+id:
+  number:
+    currency:
+      format:
+        unit: "GBP"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u&nbsp;%n"
+  layouts:
+    application:
+      page_title: "Pragprog Books Toko Online"
+      title: "Rak Buku Pragmatis"
+      home: "Rumah"
+      questions: "Pertanyaan"
+      news: "Berita"
+      contact: "kontak"
+      order: "Pesanan"
+      products: "Produk"
+      users: "Pengguna"
+      logout: "Keluar"
+
+  store:
+    index:
+      title_html: "Kamu Katalog Pragmatis"
+      add_html: "Masukkan de Keranjang"
+
+
+  carts:
+    cart:
+      title: "Keranjang Kamu"
+      empty: "Hapus Barang "
+      checkout: "Pembayaran"
+      confirm: "Kamu yakin?"
+
+  orders:
+      new:
+        legend: "Silakan masukkan detail Anda"
+      form:
+        name: "Nama"
+        address_html: "Alamat"
+        email: "E-mail"
+        pay_type: "Metode Pembayaran"
+        pay_prompt_html: "Pilih metode pembayaran"
+        submit: "Memesan tempat"
+
+        
+  activerecord:
+    models:
+      order: "memasan"
+    attributes:
+      order:
+        address: "Alamat"
+        name: "Nama"
+        email: "E-mail"
+        pay_type: "Metode Pembayaran"      
+    errors:
+      messages:
+        inclusion: "Bidan ini tidak termasuk dalam daftar"
+        blank: "bidan ini tidak boleh kosong"      
+
+  errors:
+    template:
+      body: "masalah ditemukan menabung"
+      header:
+        one: "satu kesalahan mecegah menyelamatkan %{model} ini"
+        other: "%{count} kesalahan mecegah menyelamatkan %{model} ini"
+

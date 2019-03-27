@@ -1,0 +1,45 @@
+es:
+  number:
+    currency:
+      format:
+        unit: "£GBP"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%n&nbsp;%u"
+
+  layouts:
+    application:
+      page_title: "Pragprog Books Online store"
+      title: "Publicaciones de Pragmatic"
+      home: "Inicio"
+      questions: "Preguntas"
+      news: "Noticias"
+      contact: "Contacto"
+      order: "Ordernio"
+      products: "Productasino"
+      users: "Usersiones"
+      logout: "Logoutes"
+    
+  store:
+    index:
+      title_html: "Su Cat&aacute;logo de Pragmatic"
+      add_html: "A&ntilde;adir al Carrito"
+
+  carts:
+    cart:
+      title: "Carrito de le Compra"
+      empty: "Vaciar Carrito"
+      checkout: "Comprar"
+      confirm: "Are you sureisio?"
+
+  orders:
+    new:
+      legend: "Por favor, introduzca sus datos"
+    form:
+      name: "Nombre"
+      address_html: "Direcci&oacute;n"
+      email: "E-mail"
+      pay_type: "Forma de pago"
+      pay_prompt_html: "Seleccione un m&eacute;todo de pago"
+      submit: "Realizar Pedido"

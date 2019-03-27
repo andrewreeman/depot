@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pragprog Books Online store</title>
+    <title><%= t('.page_title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +11,8 @@
 
   <body>   
     <div id="banner">
-      <%= image_tag("logo.png") %>
-      <%= @page_title || "Pragmatic Bookshelf"%>
+      <%= image_tag('logo.png') %>
+      <%= @page_title || t('.title')%>
     </div>
 
     <div id="columns">
@@ -25,11 +25,21 @@
           <% end %>
         </div>
         <ul>        
-          <li><a href="/">Home</a></li>
-          <li><a href="/questions">Questions</a></li>
-          <li><a href="/news">News</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/"><%= t('.home') %></a></li>
+          <li><a href="/questions"><%= t('.questions') %></a></li>
+          <li><a href="/news"><%= t('.news') %></a></li>
+          <li><a href="/contact"> <%= t('.contact') %> </a></li>
         </ul>
+
+        <% if session[:user_id ]%>
+            <ul>
+              <li><%= link_to t('.orders'), orders_path %></li>
+              <li><%= link_to t('.products'), products_path %></li>
+              <li><%= link_to t('.users'), users_path %></li>
+            </ul>
+
+            <%= button_to t('.logout'), logout_path, method: :delete %>
+        <% end %>
       </div>
     </div>
     <div id="main" class='<%= controller.controller_name %>'>  
