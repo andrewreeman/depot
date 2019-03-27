@@ -1,4 +1,6 @@
 id:
+  thanks: "Terima Kasih"
+
   number:
     currency:
       format:
@@ -43,7 +45,7 @@ id:
         pay_type: "Metode Pembayaran"
         pay_prompt_html: "Pilih metode pembayaran"
         submit: "Memesan tempat"
-
+      
         
   activerecord:
     models:
